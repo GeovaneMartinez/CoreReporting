@@ -1,0 +1,9 @@
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\bin\Debug\netcoreapp2.2\DataAccess.deps.json
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\bin\Debug\netcoreapp2.2\DataAccess.dll
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csproj.CoreCompileInputs.cache
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfoInputs.cache
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.AssemblyInfo.cs
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\bin\Debug\netcoreapp2.2\DataAccess.pdb
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.csprojAssemblyReference.cache
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.dll
+C:\Program Files\aspnetmvc\WebullCore\DataAccess\obj\Debug\netcoreapp2.2\DataAccess.pdb

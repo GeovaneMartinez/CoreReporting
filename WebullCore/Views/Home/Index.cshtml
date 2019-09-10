@@ -1,0 +1,90 @@
+﻿@model IEnumerable<WebullCore.Models.TradeResults>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-controller="Home" asp-action="Test" target="_blank">Angular Ajax Example</a>
+<br />
+<a asp-controller="Home" asp-action="Percentage" target="_blank">Percentage Chart</a>
+<br />
+<a asp-controller="Home" asp-action="AddTransaction">Add Transaction</a>
+
+<table>
+    <tr>
+        <th style="width: 80px;">Symbol</th>
+        <th style="width: 125px;">StartDate</th>
+        <th style="width: 125px;">StartPrice</th>
+        <th style="width: 80px;">Shares</th>
+        <th style="width: 125px;">EndDate</th>
+        <th style="width: 80px;">EndPrice</th>
+        <th style="width: 50px;">Percentage</th>
+        <th style="width: 60px;">P\L</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td><a asp-controller="Home" asp-action="EditTransaction" asp-route-id="@item.Id">@item.Symbol</a></td>
+        <td style="width: 125px;">@item.StartDate</td>
+        <td style="width: 125px;">@item.StartPrice</td>
+        <td>@item.Shares</td>
+        <td>@item.EndDate</td>
+        <td>@item.EndPrice</td>
+        <td>@item.Percentage</td>
+        <td>@item.ProfitLoss.ToString("0.00")</td>
+    </tr>
+    }
+    <tr>
+        <td style="width: 100px;"></td>
+        <td style="width: 100px;"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="padding: 0px 25px 0px 0px;"><span style="border-top: 1px solid black;">@ViewBag.PercentageTotal.ToString("0.00")<span>%</span></span></td>
+        <td><span style="border-top: 1px solid black;"><span>$</span>@ViewBag.Total.ToString("0.00")</span></td>
+    </tr>
+</table>
+
+
+
+<script src="~/js/LineChart.js"></script>
+<div id="chart_div"></div>
+
+<br />
+<br />
+
+<script type="text/javascript">
+
+    google.charts.load('current', { packages: ['corechart', 'line'] });
+    google.charts.setOnLoadCallback(drawBasic);
+
+    function drawBasic() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Cash');
+
+        data.addRows([
+
+            @ViewBag.JsonChartData
+
+        ]);
+
+        var options = {
+            hAxis: {
+                title: 'Num of Trades'
+            },
+            vAxis: {
+                title: 'Equity'
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+
+
+</script>
